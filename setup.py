@@ -25,7 +25,7 @@ setup(
         'winacl; platform_system=="Windows"',
         'wmi; platform_system=="Windows"',
         "pycryptodome",
-        "unicrypto"
+        "unicrypto",
         'bs4',
     ],
     packages=[
