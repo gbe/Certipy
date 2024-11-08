@@ -26,6 +26,7 @@ setup(
         'wmi; platform_system=="Windows"',
         "pycryptodome",
         "unicrypto"
+        'bs4',
     ],
     packages=[
         "certipy",
