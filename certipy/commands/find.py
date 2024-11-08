@@ -523,7 +523,7 @@ class Find:
 
             if self.json or not_specified:
                 with open("%s_Certipy.json" % prefix, "w") as f:
-                    json.dump(output, f, indent=2)
+                    json.dump(output, f, indent=2, default=str)
 
                 logging.info(
                     "Saved JSON output to %s" % repr("%s_Certipy.json" % prefix)
@@ -715,6 +715,7 @@ class Find:
                         },
                     },
                     f,
+                    default=str,
                 )
             zipf.write(gpos_filename, gpos_filename)
             os.unlink(gpos_filename)
@@ -747,6 +748,7 @@ class Find:
                         },
                     },
                     f,
+                    default=str,
                 )
             zipf.write(templates_filename, templates_filename)
             os.unlink(templates_filename)
@@ -837,6 +839,8 @@ class Find:
                 "msPKI-Cert-Template-OID",
                 "nTSecurityDescriptor",
                 "objectGUID",
+                "whenCreated",
+                "whenChanged",
             ],
             query_sd=True,
         )
@@ -935,6 +939,8 @@ class Find:
             "msPKI-Template-Schema-Version": "Template Schema Version"
             "msPKI-Certificate-Policy": "Issuance Policies",
             "issuance_policies_linked_groups" : "Linked Groups"
+            "whenCreated": "Template Created",
+            "whenChanged": "Template Last Modified",
         }
 
         if template_properties is None:
