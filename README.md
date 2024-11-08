@@ -4,6 +4,32 @@
 
 Certipy is an offensive tool for enumerating and abusing Active Directory Certificate Services (AD CS). If you're not familiar with AD CS and the various domain escalation techniques, I highly recommend reading [Certified Pre-Owned](https://posts.specterops.io/certified-pre-owned-d95910965cd2) by [Will Schroeder](https://twitter.com/harmj0y) and [Lee Christensen](https://twitter.com/tifkin_).
 
+This repo is intented to merge more or less as-is the pending open PRs from lyak's repository. The merge conflicts were hopefully fixed.
+
+Currently, the following PRs were merged:
+- [PR231](https://github.com/ly4k/Certipy/pull/231): add ldap simple auth
+- [PR229](https://github.com/ly4k/Certipy/pull/229): Add switch for SMIME Extensions support
+- [PR228](https://github.com/ly4k/Certipy/pull/228): ESC15/EKUwu PR
+- [PR226](https://github.com/ly4k/Certipy/pull/226): Added extended rights to 'find' command. Smaller changes to has_vulne...
+- [PR225](https://github.com/ly4k/Certipy/pull/225): Fix for forge.py to solve SID overwrite errors and deprecation warnings (#224)
+- [PR210](https://github.com/ly4k/Certipy/pull/210): Add options for cross domain authentication
+- [PR209](https://github.com/ly4k/Certipy/pull/209): accept tgs other than host/taget_name@domain
+- [PR204](https://github.com/ly4k/Certipy/pull/204): update pyasn1
+- [PR203](https://github.com/ly4k/Certipy/pull/203): Improve check_web_enrollment function to identify ESC8 on HTTP/HTTPS
+- [PR201](https://github.com/ly4k/Certipy/pull/201): Add DCOM support for req command
+- [PR200](https://github.com/ly4k/Certipy/pull/200): Fixing shadow.py to add more than 1 KeyCredential object and correctly list them
+- [PR198](https://github.com/ly4k/Certipy/pull/198): Added -ldap-port flag in the find action
+- [PR196](https://github.com/ly4k/Certipy/pull/196): Adds support for ESC13
+- [PR193](https://github.com/ly4k/Certipy/pull/193): Add whenCreated and whenModified to the output
+- [PR183](https://github.com/ly4k/Certipy/pull/183): Add hidden import to Certipy.spec
+- [PR177](https://github.com/ly4k/Certipy/pull/177): Fix bug in extended right dacl check
+- [PR143](https://github.com/ly4k/Certipy/pull/143): Added option to Enumerate Templates via HTTP Relaying to /certsrv/certreqxt.asp Endpoint 
+- [PR136](https://github.com/ly4k/Certipy/pull/136): Fixed ESC9 detection conditions
+- [PR133](https://github.com/ly4k/Certipy/pull/133): Parse template schema version and determine all conditions for ESC3
+- [PR131](https://github.com/ly4k/Certipy/pull/131): Prefer Hostname in AD CS Web API URL
+- [PR114](https://github.com/ly4k/Certipy/pull/114): Fix authentication request in multidomain environment
+- [PR098](https://github.com/ly4k/Certipy/pull/98): Added Ability to specify a password which will be used to encrypt the pfx file
+
 ## Table of Contents
 
 - [Certipy](#certipy)
