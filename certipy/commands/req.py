@@ -720,6 +720,7 @@ class Request:
         retrieve: int = 0,
         on_behalf_of: str = None,
         pfx: str = None,
+        pfx_password: str = None,
         key_size: int = None,
         archive_key: bool = False,
         renew: bool = False,
@@ -745,6 +746,7 @@ class Request:
         self.request_id = int(retrieve)
         self.on_behalf_of = on_behalf_of
         self.pfx = pfx
+        self.pfx_password = pfx_password
         self.key_size = key_size
         self.archive_key = archive_key
         self.renew = renew
@@ -828,7 +830,7 @@ class Request:
             logging.info("Saved certificate to %s" % repr("%s.crt" % out))
         else:
             logging.info("Loaded private key from %s" % repr("%d.key" % request_id))
-            pfx = create_pfx(key, cert)
+            pfx = create_pfx(key, cert, self.pfx_password)
             with open("%s.pfx" % out, "wb") as f:
                 f.write(pfx)
             logging.info(
@@ -959,7 +961,7 @@ class Request:
 
             out = out.rstrip("$").lower()
 
-        pfx = create_pfx(key, cert)
+        pfx = create_pfx(key, cert, self.pfx_password)
 
         outfile = "%s.pfx" % out
 
