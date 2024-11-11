@@ -952,9 +952,9 @@ class Find:
             "validity_period": "Validity Period",
             "renewal_period": "Renewal Period",
             "msPKI-Minimal-Key-Size": "Minimum RSA Key Length",
-            "msPKI-Template-Schema-Version": "Template Schema Version"
+            "msPKI-Template-Schema-Version": "Template Schema Version",
             "msPKI-Certificate-Policy": "Issuance Policies",
-            "issuance_policies_linked_groups" : "Linked Groups"
+            "issuance_policies_linked_groups" : "Linked Groups",
             "whenCreated": "Template Created",
             "whenChanged": "Template Last Modified",
         }

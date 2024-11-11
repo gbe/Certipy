@@ -264,6 +264,8 @@ class Target:
 
         if options.ldap_port is not None:
             ldap_port = options.ldap_port
+        else:
+            ldap_port = "389"
 
         self.domain = domain
         self.username = username

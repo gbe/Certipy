@@ -44,7 +44,6 @@ class ActiveDirectorySecurity:
             if ace["AceType"] == ldaptypes.ACCESS_ALLOWED_ACE.ACE_TYPE:
                 self.aces[sid]["rights"] |= mask
 
-<<<<<<< HEAD
             if ace["AceType"] == ldaptypes.ACCESS_ALLOWED_OBJECT_ACE.ACE_TYPE:
                 self.aces[sid]["rights"] |= self.RIGHTS_TYPE(ace["Ace"]["Mask"]["Mask"])
                 if ace["Ace"]["Flags"] == 2:
@@ -53,10 +52,8 @@ class ActiveDirectorySecurity:
                     uuid = bin_to_string(ace["Ace"]["ObjectType"]).lower()
                 else:
                     continue
-=======
                 if self.RIGHTS_TYPE.EXTENDED_RIGHT & mask:
                     self.aces[sid]["extended_rights"].append(EXTENDED_RIGHTS_NAME_MAP["All-Extended-Rights"])
->>>>>>> pr177/bug_esc1_dacl_check
 
             if ace["AceType"] == ldaptypes.ACCESS_ALLOWED_OBJECT_ACE.ACE_TYPE and \
                self.RIGHTS_TYPE.EXTENDED_RIGHT & mask and \
